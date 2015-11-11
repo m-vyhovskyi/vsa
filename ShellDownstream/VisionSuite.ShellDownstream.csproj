@@ -7,8 +7,8 @@
     <ProjectGuid>{3D6CF6F8-A1B7-4426-B933-9A7FE4CE051B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VisionSuite.Root</RootNamespace>
-    <AssemblyName>VisionSuite.Root</AssemblyName>
+    <RootNamespace>VisionSuite.ShellDownstream</RootNamespace>
+    <AssemblyName>VisionSuite.ShellDownstream</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -49,25 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\Core\ShellDownstreamCoreActorBuilder.cs" />
-    <Compile Include="Configuration\VisionSuiteApplicationActorBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VisionSuiteBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\VisionSuite.ActorBuilders\VisionSuite.ActorBuilders.csproj">
+      <Project>{99e72e05-4281-4949-a9cb-dd640bac7840}</Project>
+      <Name>VisionSuite.ActorBuilders</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VisionSuite.Actors\VisionSuite.Actors.csproj">
       <Project>{5ffe8411-e970-46f0-9baf-05d0d6aec8c0}</Project>
       <Name>VisionSuite.Actors</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Configuration\Presentation\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
