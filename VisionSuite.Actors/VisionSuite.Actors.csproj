@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActorBuilder.cs" />
+    <Compile Include="Presentation\IPresentationActorBuilder.cs" />
     <Compile Include="Root\Core\CoreActor.cs" />
     <Compile Include="Root\Core\CoreActorBuilder.cs" />
     <Compile Include="IActor.cs" />

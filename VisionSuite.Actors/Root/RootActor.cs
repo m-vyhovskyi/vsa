@@ -10,10 +10,18 @@ namespace VisionSuite.Actors.Root
     {
         public Version Version { get; set; }
 
-        public RootActor(Action<RootActor> build)
+        public IActorRef Presentation { get; set; }
+
+        public RootActor(Action<RootActor, IUntypedActorContext> build)
         {
-            build(this);
-            Receive<ShowVersionMessage>(m => Console.WriteLine("Version is {0}", Version));
+            build(this, Context);
+            Receive<ShowVersionMessage>(m => ProcessShowVersion(m));
+        }
+
+        private void ProcessShowVersion(ShowVersionMessage showVersionMessage)
+        {
+            Console.WriteLine("Version is {0}", Version);
+            Presentation.Tell(showVersionMessage);
         }
     }
 }

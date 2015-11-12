@@ -1,5 +1,7 @@
 ﻿using System;
 
+using Akka.Actor;
+
 namespace VisionSuite.Actors.Root.Presentation
 {
     public class PresentationActorBuilder : ActorBuilder<PresentationActor>
@@ -12,9 +14,9 @@ namespace VisionSuite.Actors.Root.Presentation
             return this;
         }
 
-        protected override Action<PresentationActor> OnBuild()
+        protected override Action<PresentationActor,IUntypedActorContext> OnBuild(IActorRefFactory actorRefFactory)
         {
-            return (a) =>
+            return (a,c) =>
             {
                 a.Name = name;
             };
