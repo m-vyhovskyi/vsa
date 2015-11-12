@@ -1,6 +1,6 @@
 ﻿using Akka.Actor;
 
-namespace VisionSuite.Actors.Core
+namespace VisionSuite.Actors.Root.Core
 {
     public class CoreActor : ReceiveActor, IActor
     {

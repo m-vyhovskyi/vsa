@@ -57,13 +57,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VisionSuite.ActorBuilders\VisionSuite.ActorBuilders.csproj">
-      <Project>{99e72e05-4281-4949-a9cb-dd640bac7840}</Project>
-      <Name>VisionSuite.ActorBuilders</Name>
-    </ProjectReference>
     <ProjectReference Include="..\VisionSuite.Actors\VisionSuite.Actors.csproj">
       <Project>{5ffe8411-e970-46f0-9baf-05d0d6aec8c0}</Project>
       <Name>VisionSuite.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VisionSuite.Messages\VisionSuite.Messages.csproj">
+      <Project>{06fdf6ca-11e8-4c1a-b5d7-a58978cef86f}</Project>
+      <Name>VisionSuite.Messages</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

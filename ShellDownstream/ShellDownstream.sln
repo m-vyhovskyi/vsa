@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisionSuite.ShellDownstream
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisionSuite.Actors", "..\VisionSuite.Actors\VisionSuite.Actors.csproj", "{5FFE8411-E970-46F0-9BAF-05D0D6AEC8C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisionSuite.ActorBuilders", "..\VisionSuite.ActorBuilders\VisionSuite.ActorBuilders.csproj", "{99E72E05-4281-4949-A9CB-DD640BAC7840}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisionSuite.Messages", "..\VisionSuite.Messages\VisionSuite.Messages.csproj", "{06FDF6CA-11E8-4C1A-B5D7-A58978CEF86F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{5FFE8411-E970-46F0-9BAF-05D0D6AEC8C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FFE8411-E970-46F0-9BAF-05D0D6AEC8C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FFE8411-E970-46F0-9BAF-05D0D6AEC8C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{99E72E05-4281-4949-A9CB-DD640BAC7840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99E72E05-4281-4949-A9CB-DD640BAC7840}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99E72E05-4281-4949-A9CB-DD640BAC7840}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99E72E05-4281-4949-A9CB-DD640BAC7840}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06FDF6CA-11E8-4C1A-B5D7-A58978CEF86F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06FDF6CA-11E8-4C1A-B5D7-A58978CEF86F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06FDF6CA-11E8-4C1A-B5D7-A58978CEF86F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06FDF6CA-11E8-4C1A-B5D7-A58978CEF86F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,7 +2,8 @@
 
 using Akka.Actor;
 
-using VisionSuite.ActorBuilders;
+using VisionSuite.Actors.Root;
+using VisionSuite.Messages.Core;
 
 namespace VisionSuite.ShellDownstream
 {
@@ -10,10 +11,11 @@ namespace VisionSuite.ShellDownstream
     {
         static void Main(string[] args)
         {
-            
-            ActorSystem rootActorSystem = ActorSystem.Create("ShellDownstreamRoot");            
-            var builder = new ApplicationActorBuilder();
-            builder.Build(rootActorSystem);
+            ActorSystem rootActorSystem = ActorSystem.Create("ShellDownstreamRoot");
+            var builder = new RootActorBuilder().OfVersion(new Version(1, 1));
+            var rootActor = builder.Build(rootActorSystem);
+
+            rootActor.Tell(new ShowVersionMessage());
 
             //Wait for the moment user hits any key just for test purposes
             Console.ReadKey();

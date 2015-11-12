@@ -31,11 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Akka, Version=1.0.4.12, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\VisionSuite.Root\packages\Akka.1.0.4\lib\net45\Akka.dll</HintPath>
+      <HintPath>..\ShellDownstream\packages\Akka.1.0.4\lib\net45\Akka.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\VisionSuite.Root\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\ShellDownstream\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -47,17 +47,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\CoreActor.cs" />
+    <Compile Include="ActorBuilder.cs" />
+    <Compile Include="Root\Core\CoreActor.cs" />
+    <Compile Include="Root\Core\CoreActorBuilder.cs" />
     <Compile Include="IActor.cs" />
     <Compile Include="IActorBuilder.cs" />
-    <Compile Include="Presentation\PresentationActor.cs" />
-    <Compile Include="ApplicationActor.cs" />
+    <Compile Include="Root\RootActorBuilder.cs" />
+    <Compile Include="Root\Presentation\PresentationActor.cs" />
+    <Compile Include="Root\RootActor.cs" />
+    <Compile Include="Root\Presentation\PresentationActorBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\VisionSuite.Messages\VisionSuite.Messages.csproj">
+      <Project>{06fdf6ca-11e8-4c1a-b5d7-a58978cef86f}</Project>
+      <Name>VisionSuite.Messages</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
