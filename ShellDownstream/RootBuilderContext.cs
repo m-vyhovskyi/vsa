@@ -1,6 +1,6 @@
 ﻿using Akka.Actor;
 
-using VisionSuite.Actors;
+using VisionSuite.Actors.Context;
 
 namespace VisionSuite.ShellDownstream
 {

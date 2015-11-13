@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration.cs" />
     <Compile Include="RootBuilderContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +63,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ShellDownstream.Actors\ShellDownstream.Actors.csproj">
+      <Project>{977c3004-920e-4c12-974c-4a0c02a1db55}</Project>
+      <Name>ShellDownstream.Actors</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VisionSuite.Actors\VisionSuite.Actors.csproj">
       <Project>{5ffe8411-e970-46f0-9baf-05d0d6aec8c0}</Project>
       <Name>VisionSuite.Actors</Name>

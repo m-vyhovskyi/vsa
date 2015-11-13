@@ -1,4 +1,4 @@
-﻿namespace VisionSuite.Actors
+﻿namespace VisionSuite.Actors.Context
 {
     public interface IActor
     {

@@ -1,6 +1,6 @@
 ﻿using Akka.Actor;
 
-namespace VisionSuite.Actors
+namespace VisionSuite.Actors.Context
 {
     public class BuilderContext : IBuilderContext
     {

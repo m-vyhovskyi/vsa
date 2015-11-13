@@ -2,7 +2,7 @@
 
 using Akka.Actor;
 
-namespace VisionSuite.Actors
+namespace VisionSuite.Actors.Context
 {
     public abstract class ActorBuilder<T> : IActorBuilder<T>
         where T : IActor

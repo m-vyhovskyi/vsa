@@ -2,6 +2,7 @@
 
 using Akka.Actor;
 
+using VisionSuite.Actors.Context;
 using VisionSuite.Messages.Core;
 
 namespace VisionSuite.Actors.Root.Presentation

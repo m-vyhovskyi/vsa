@@ -1,7 +1,8 @@
 ﻿using Autofac;
 
-using VisionSuite.Actors.Root;
-using VisionSuite.Actors.Root.Presentation;
+using VisionSuite.Actors.Configuration.Root;
+using VisionSuite.Actors.Configuration.Root.Presentation;
+
 
 namespace VisionSuite.Actors
 {

@@ -1,9 +1,18 @@
 ﻿using System;
 
-using VisionSuite.Actors.Root.Presentation;
+using VisionSuite.Actors.Configuration.Root.Presentation;
+using VisionSuite.Actors.Context;
+using VisionSuite.Actors.Root;
 
-namespace VisionSuite.Actors.Root
+namespace VisionSuite.Actors.Configuration.Root
 {
+    public interface IRootActorBuilder : IActorBuilder<RootActor>
+    {
+        IRootActorBuilder Version(Version version);
+
+        IRootActorBuilder Presentation(IPresentationActorBuilder presentationBuilder);
+    }
+
     class RootActorBuilder : ActorBuilder<RootActor>, IRootActorBuilder
     {
         private Version version;

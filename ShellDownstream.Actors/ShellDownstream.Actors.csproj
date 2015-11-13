@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5FFE8411-E970-46F0-9BAF-05D0D6AEC8C0}</ProjectGuid>
+    <ProjectGuid>{977C3004-920E-4C12-974C-4A0C02A1DB55}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VisionSuite.Actors</RootNamespace>
-    <AssemblyName>VisionSuite.Actors</AssemblyName>
+    <RootNamespace>ShellDownstream.Actors</RootNamespace>
+    <AssemblyName>ShellDownstream.Actors</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -51,28 +51,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\ActorBuilder.cs" />
     <Compile Include="ActorRepository.cs" />
-    <Compile Include="Context\BuilderContext.cs" />
-    <Compile Include="Context\IBuilderContext.cs" />
-    <Compile Include="Context\IActor.cs" />
-    <Compile Include="Context\IActorBuilder.cs" />
-    <Compile Include="Configuration\Root\Presentation\PresentationConfiguration.cs" />
-    <Compile Include="Configuration\Root\RootActorBuilder.cs" />
-    <Compile Include="Root\Presentation\PresentationActor.cs" />
-    <Compile Include="Root\RootActor.cs" />
-    <Compile Include="Configuration\Root\Presentation\PresentationActorBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Configuration\Root\RootConfiguration.cs" />
+    <Compile Include="Root\ShellDownstreamRootActor.cs" />
+    <Compile Include="Configuration\Root\ShellDownstreamRootActorBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\VisionSuite.Actors\VisionSuite.Actors.csproj">
+      <Project>{5ffe8411-e970-46f0-9baf-05d0d6aec8c0}</Project>
+      <Name>VisionSuite.Actors</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VisionSuite.Messages\VisionSuite.Messages.csproj">
       <Project>{06fdf6ca-11e8-4c1a-b5d7-a58978cef86f}</Project>
       <Name>VisionSuite.Messages</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

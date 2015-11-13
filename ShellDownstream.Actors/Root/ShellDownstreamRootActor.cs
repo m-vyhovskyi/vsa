@@ -5,15 +5,15 @@ using Akka.Actor;
 using VisionSuite.Actors.Context;
 using VisionSuite.Messages.Core;
 
-namespace VisionSuite.Actors.Root
+namespace ShellDownstream.Actors.Root
 {
-    public class RootActor : ReceiveActor, IActor
+    public class ShellDownstreamRootActor : ReceiveActor, IActor
     {
         public Version Version { get; set; }
 
         public IActorRef Presentation { get; set; }
 
-        public RootActor(Action<RootActor, IBuilderContext> build)
+        public ShellDownstreamRootActor(Action<ShellDownstreamRootActor, IBuilderContext> build)
         {
             build(this, BuilderContext.From(Context));
             Receive<ShowVersionMessage>(m => ProcessShowVersion(m));
@@ -21,7 +21,7 @@ namespace VisionSuite.Actors.Root
 
         private void ProcessShowVersion(ShowVersionMessage showVersionMessage)
         {
-            Console.WriteLine("Version is {0}", Version);
+            Console.WriteLine("SHD Version is {0}", Version);
             Presentation.Tell(showVersionMessage);
         }
     }

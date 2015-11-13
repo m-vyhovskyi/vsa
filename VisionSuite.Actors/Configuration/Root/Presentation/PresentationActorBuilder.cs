@@ -1,6 +1,9 @@
 ﻿using System;
 
-namespace VisionSuite.Actors.Root.Presentation
+using VisionSuite.Actors.Context;
+using VisionSuite.Actors.Root.Presentation;
+
+namespace VisionSuite.Actors.Configuration.Root.Presentation
 {
     class PresentationActorBuilder : ActorBuilder<PresentationActor>, IPresentationActorBuilder
     {
@@ -16,6 +19,12 @@ namespace VisionSuite.Actors.Root.Presentation
         {
             return (a, c) => { a.Name = name; };
         }
+    }
+
+    public interface IPresentationActorBuilder : IActorBuilder<PresentationActor>
+    {
+        IPresentationActorBuilder Name(string name);
+
     }
 
 }
