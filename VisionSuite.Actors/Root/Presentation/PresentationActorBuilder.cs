@@ -1,25 +1,21 @@
 ﻿using System;
 
-using Akka.Actor;
-
 namespace VisionSuite.Actors.Root.Presentation
 {
-    public class PresentationActorBuilder : ActorBuilder<PresentationActor>
+    class PresentationActorBuilder : ActorBuilder<PresentationActor>, IPresentationActorBuilder
     {
         private string name;
 
-        public PresentationActorBuilder WithName(string name)
+        public IPresentationActorBuilder Name(string name)
         {
             this.name = name;
             return this;
         }
-
-        protected override Action<PresentationActor,IUntypedActorContext> OnBuild(IActorRefFactory actorRefFactory)
+        
+        protected override Action<PresentationActor, IBuilderContext> OnBuild()
         {
-            return (a,c) =>
-            {
-                a.Name = name;
-            };
+            return (a, c) => { a.Name = name; };
         }
     }
+
 }

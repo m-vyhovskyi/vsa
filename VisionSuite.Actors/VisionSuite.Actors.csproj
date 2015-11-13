@@ -34,6 +34,10 @@
       <HintPath>..\ShellDownstream\packages\Akka.1.0.4\lib\net45\Akka.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\ShellDownstream\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\ShellDownstream\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -48,11 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActorBuilder.cs" />
-    <Compile Include="Presentation\IPresentationActorBuilder.cs" />
-    <Compile Include="Root\Core\CoreActor.cs" />
-    <Compile Include="Root\Core\CoreActorBuilder.cs" />
+    <Compile Include="ActorRepository.cs" />
+    <Compile Include="BuilderContext.cs" />
+    <Compile Include="IBuilderContext.cs" />
     <Compile Include="IActor.cs" />
     <Compile Include="IActorBuilder.cs" />
+    <Compile Include="Root\IRootActorBuilder.cs" />
+    <Compile Include="Root\Presentation\IPresentationActorBuilder.cs" />
     <Compile Include="Root\RootActorBuilder.cs" />
     <Compile Include="Root\Presentation\PresentationActor.cs" />
     <Compile Include="Root\RootActor.cs" />

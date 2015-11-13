@@ -7,16 +7,17 @@ namespace VisionSuite.Actors
     public abstract class ActorBuilder<T> : IActorBuilder<T>
         where T : IActor
     {
-        protected abstract Action<T, IUntypedActorContext> OnBuild(IActorRefFactory actorRefFactory);
+        protected abstract Action<T, IBuilderContext> OnBuild();
 
-        public IActorRef Build(IActorRefFactory actorRefFactory)
+        public IActorRef Build(IBuilderContext context)
         {
-            var buildAction = OnBuild(actorRefFactory);
+            var buildAction = OnBuild();
             AsssertBuildAction(buildAction);
-            return actorRefFactory.ActorOf(Props.Create(typeof(T), buildAction));
+
+            return context.ActorOf(Props.Create(typeof(T), buildAction));
         }
 
-        private void AsssertBuildAction(Action<T,IUntypedActorContext> buildAction)
+        private void AsssertBuildAction(Action<T,IBuilderContext> buildAction)
         {
             if (buildAction == null)
             {

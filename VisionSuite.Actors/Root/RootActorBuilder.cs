@@ -1,40 +1,37 @@
 ﻿using System;
 
-using Akka.Actor;
-
-using VisionSuite.Actors.Presentation;
 using VisionSuite.Actors.Root.Presentation;
 
 namespace VisionSuite.Actors.Root
 {
-    public class RootActorBuilder : ActorBuilder<RootActor>
+    class RootActorBuilder : ActorBuilder<RootActor>, IRootActorBuilder
     {
         private Version version;
-        private PresentationActorBuilder presentationBuilder;
+        private IPresentationActorBuilder presentationBuilder;
 
-        public RootActorBuilder()
+        public RootActorBuilder(IPresentationActorBuilder presentationActorBuilder)
         {
-            presentationBuilder = new PresentationActorBuilder();
+            presentationBuilder = presentationActorBuilder;
         }
 
-        public RootActorBuilder Version(Version version)
+        public IRootActorBuilder Version(Version version)
         {
             this.version = version;
             return this;
         }
 
-        public RootActorBuilder Presentation(PresentationActorBuilder presentationBuilder)
+        public IRootActorBuilder Presentation(IPresentationActorBuilder presentationBuilder)
         {
             this.presentationBuilder = presentationBuilder;
             return this;
         }
 
-        protected override Action<RootActor,IUntypedActorContext> OnBuild(IActorRefFactory actorRefFactory)
+        protected override Action<RootActor, IBuilderContext> OnBuild()
         {
-            return (a,c) =>
+            return (a, context) =>
             {
                 a.Version = version;
-                a.Presentation = presentationBuilder.Build(actorRefFactory);
+                a.Presentation = presentationBuilder.Build(context);
             };
         }
     }

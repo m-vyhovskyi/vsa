@@ -10,9 +10,9 @@ namespace VisionSuite.Actors.Root.Presentation
     {
         public string Name { get; set; }
 
-        public PresentationActor(Action<PresentationActor, IUntypedActorContext> build)
+        public PresentationActor(Action<PresentationActor, IBuilderContext> build)
         {
-            build(this, Context);
+            build(this, BuilderContext.From(Context));
             Receive<ShowVersionMessage>(m => ProcessShowVersion(m));
         }
 

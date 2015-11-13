@@ -12,9 +12,9 @@ namespace VisionSuite.Actors.Root
 
         public IActorRef Presentation { get; set; }
 
-        public RootActor(Action<RootActor, IUntypedActorContext> build)
+        public RootActor(Action<RootActor, IBuilderContext> build)
         {
-            build(this, Context);
+            build(this, BuilderContext.From(Context));
             Receive<ShowVersionMessage>(m => ProcessShowVersion(m));
         }
 

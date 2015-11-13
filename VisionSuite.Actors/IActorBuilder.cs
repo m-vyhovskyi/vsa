@@ -4,6 +4,6 @@ namespace VisionSuite.Actors
 {
     public interface IActorBuilder<T> where T: IActor
     {
-        IActorRef Build(IActorRefFactory actorRefFactory);
+        IActorRef Build(IBuilderContext context);
     }
 }
